@@ -9,22 +9,30 @@ class TaskController extends Controller
 {
 
     public function index()  {
-        $tasks=Task::all();
-        return view('welcome',compact('tasks'));
+       return Task::all();
+
     }
-    public function storeTask(Request $request)  {
-        Task::create([
+    public function store(Request $request)  {
+         return Task::create([
             'name'=>$request->name,
             'status'=>1,
-            'exoiration_date'=>$request->date,
         ]);
-        return redirect('/');
+
+
     }
-    public function delete($id)  {
-        Task::find($id)->delete();
-        return redirect('/');
+    public function update(Request $request,Task $task)  {
+        $task->update([
+            'name'=>$request->name,
+            'status'=>1,
+        ]);
+
     }
-    public function status($id)  {
+    public function delete(Task $task)  {
+        $task->delete();
+
+    }
+   
+    public function show($id)  {
         $task= Task::where('id',$id)->first();
         $task->increment('status');
         return redirect('/');

@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TaskController::class,'index']);
-Route::get('/delete/{id}/', [TaskController::class,'delete'])->name('task.delete');
-Route::get('/status/{id}/', [TaskController::class,'status'])->name('task.status');
-Route::post('/store', [TaskController::class,'storeTask']
-)->name('task.store');
+// Route::get('/', [TaskController::class,'index']);
+// Route::get('/delete/{id}/', [TaskController::class,'delete'])->name('task.delete');
+// Route::get('/status/{id}/', [TaskController::class,'status'])->name('task.status');
+// Route::post('/store', [TaskController::class,'storeTask']
+// )->name('task.store');
